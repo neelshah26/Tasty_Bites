@@ -2,16 +2,17 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'kotlin-android'
 }
 
 android {
     namespace 'com.example.tastybites'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.tastybites"
         minSdk 22
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -79,5 +80,9 @@ dependencies {
 
     //coroutines core
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
 
 }

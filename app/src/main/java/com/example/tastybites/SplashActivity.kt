@@ -1,21 +1,25 @@
 package com.example.tastybites
 
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
+import com.example.tastybites.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: ActivitySplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        binding.btnGetStarted.setOnClickListener {
+            val intent = Intent(this@SplashActivity, HomeActivity:: class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

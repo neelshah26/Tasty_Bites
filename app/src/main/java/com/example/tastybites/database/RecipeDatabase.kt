@@ -5,9 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.tastybites.dao.RecipeDao
-import com.example.tastybites.models.Recipies
+import com.example.tastybites.models.Category
+import com.example.tastybites.models.CategoryItems
+import com.example.tastybites.models.Recipes
+import com.example.tastybites.models.convertor.CategoryListConverter
 
-@Database(entities = [Recipies::class], version = 1, exportSchema = false)
+@Database(entities = [Recipes::class, Category::class, CategoryItems::class,CategoryListConverter::class], version = 1, exportSchema = false)
 abstract class RecipeDatabase: RoomDatabase() {
 
     companion object{
